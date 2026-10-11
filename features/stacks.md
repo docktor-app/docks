@@ -19,8 +19,8 @@ The folder name is the stack name you chose, lower-cased and made URL-safe (for 
 There are three ways to get a stack into Docktor:
 
 - **Paste a compose file.** On **Stacks**, choose **Create Stack**. Fill in **Name**, an optional **Description**, the **Docker Compose File** and, optionally, the **Environment Variables**, then choose **Create Stack**.
-- **Start from a template.** On the Create Stack page, choose **Start from Template** to pick a ready-made stack and have the form filled in for you. See Templates.
-- **Import an existing project.** On **Stacks**, choose **Import Existing Stack** to bring a compose project that already runs on the host under Docktor's management. See Brownfield import.
+- **Start from a template.** On the Create Stack page, choose **Start from Template** to pick a ready-made stack and have the form filled in for you. See [Templates](/features/templates).
+- **Import an existing project.** On **Stacks**, choose **Import Existing Stack** to bring a compose project that already runs on the host under Docktor's management. See [Brownfield import](/features/import).
 
 Creating a stack writes its files and registers it with the status **Draft**. Nothing runs until you deploy it.
 
@@ -35,8 +35,8 @@ Open a stack from the list to get its page. The header shows the stack name, a s
 | **Overview** | An uptime summary, the **Services** table, an incident list and an **Activity** timeline. |
 | **Config** | The **Compose File** editor, **HTTP Health Probes**, and the **Environment Variables** editor. |
 | **Logs** | Live log output for one service or all of them. |
-| **Backups** | Backup summary, schedule and history for this stack. See Backups and restore. |
-| **Proxy** | Domains and TLS for this stack's services. See Proxy and TLS. |
+| **Backups** | Backup summary, schedule and history for this stack. See [Backups and restore](/features/backups). |
+| **Proxy** | Domains and TLS for this stack's services. See [Proxy and TLS](/features/proxy). |
 
 ### Overview
 
@@ -86,7 +86,7 @@ The **Deploy** button in the header runs `docker compose up -d` for the stack. W
 | **Stop** | `docker compose stop` | Running, Healthy, Unhealthy or Error |
 | **Restart** | `docker compose restart` | Running, Healthy or Unhealthy |
 | **Update Images** | Pulls newer images and recreates the containers. See Update checks. | Not busy |
-| **Backup Now** | Starts a backup. See Backups and restore. | Not already backing up |
+| **Backup Now** | Starts a backup. See [Backups and restore](/features/backups). | Not already backing up |
 | **Delete** | Removes the stack. | Draft, Stopped or Error |
 
 Restart restarts the existing containers; it does not re-read a changed compose file. Use **Redeploy** for that.

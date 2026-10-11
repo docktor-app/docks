@@ -23,7 +23,7 @@ What to do:
 
 ## The host filesystem mount
 
-The shipped `docker-compose.yml` also mounts the host's root filesystem, read-only, at `/host`. Docktor uses it for two things: scanning for existing compose projects during import, and measuring the host's real disk usage. It is read-only, but it still gives the Docktor container **read access to the entire host disk**, including files you would not expect it to need.
+The shipped `docker-compose.yml` also mounts the host's root filesystem, read-only, at `/host`. Docktor uses it for two things: scanning for existing compose projects during [import](/features/import), and measuring the host's real disk usage. It is read-only, but it still gives the Docktor container **read access to the entire host disk**, including files you would not expect it to need.
 
 Both features depend on this mount. If you do not need them, you can remove that line from `docker-compose.yml`, at the cost of import scanning and real host disk figures (disk monitoring would then measure only the container's own filesystem). See the [Deployment reference](/reference/deployment#environment-variables) for `DOCKER_DATA_PATH`, which points disk monitoring at the mount.
 

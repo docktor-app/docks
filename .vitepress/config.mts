@@ -45,7 +45,13 @@ export default defineConfig({
       },
       {
         text: "Features",
-        items: [{ text: "Stacks", link: "/features/stacks" }],
+        items: [
+          { text: "Stacks", link: "/features/stacks" },
+          { text: "Templates", link: "/features/templates" },
+          { text: "Backups and restore", link: "/features/backups" },
+          { text: "Proxy and TLS", link: "/features/proxy" },
+          { text: "Brownfield import", link: "/features/import" },
+        ],
       },
       {
         text: "Reference",

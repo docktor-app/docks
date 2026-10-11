@@ -203,9 +203,9 @@ A fresh, empty database records no baseline; the initial migration is simply app
 
 ## Backups
 
-The restic repository location is a setting you configure **in the app itself** (Settings, Backups), stored encrypted in the database. It is not a volume mount, and there is deliberately no backup volume in `docker-compose.yml`.
+Backup settings (the restic password, the repository type, schedules and retention) are configured in the app itself, under Settings, Backup, and stored encrypted in the database. They are not environment variables and need no volume.
 
-If you point a local-type restic repository at a host path from within the app, that path must itself be reachable from inside the Docktor container. Bind-mount it yourself in `docker-compose.yml`, the same way the stacks directory is mounted, and enter the container-side path in Settings. SFTP and S3 repositories need no mount.
+In v0.1.0 every backup is written to a restic repository in the `backups/` folder inside the stack's own folder, below the stacks directory. That directory is already bind-mounted from the host, so there is no backup volume in `docker-compose.yml` and none to add. The SFTP and S3-compatible repository types can be saved in Settings but are not used as a backup destination yet, so copy the `backups/` folders off the host yourself if you need an off-site copy. See [Backups and restore](/features/backups) for the full behaviour.
 
 ## Troubleshooting
 

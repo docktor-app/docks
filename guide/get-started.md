@@ -85,5 +85,15 @@ Database migrations are applied automatically when the new container starts. The
 ## Next steps
 
 - [Introduction](/guide/introduction) explains what Docktor is, who it is for and how it works.
-- [Stacks](/features/stacks) shows how to create, edit and deploy your first stack.
 - [Security](/security) explains what the Docker socket means for your host and how to run Docktor safely. Read it before you expose Docktor beyond your own network.
+
+Then learn the features:
+
+- [Stacks and compose editing](/features/stacks): create, edit and deploy stacks.
+- [Templates](/features/templates): start a stack from a ready-made template.
+- [Backups and restore](/features/backups): schedule restic backups and restore a snapshot.
+- [Proxy and TLS](/features/proxy): give services their own domain with HTTPS.
+- [Brownfield import](/features/import): bring in compose projects that already run on the host.
+- [Update checks](/features/updates): find out when newer images are available.
+- [Health and uptime](/features/health): health probes, uptime, storage and email alerts.
+- [Two-factor authentication and account security](/features/account-security): protect the account.

@@ -42,6 +42,8 @@ Avoid `TRUST_PROXY=true`, which trusts every hop and lets a client pick its own 
 
 ## Accounts
 
+Setup steps and details for everything below are in [Two-factor authentication and account security](/features/account-security).
+
 - **First account.** The setup wizard creates the first account. After that, self-registration is closed.
 - **Two-factor authentication.** Any user can protect their account with an authenticator app (TOTP) and single-use recovery codes. Because Docktor controls the host, turn it on for your own account straight after setup. An instance can also require it: with **Require two-factor for all users** switched on, anyone without it must enrol before they can use Docktor.
 - **Rate limiting.** Sign-in, two-factor code entry and the password-confirmed account actions allow 5 attempts per 15 minutes per client IP, counted in the database so a restart does not reset them.

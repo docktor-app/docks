@@ -51,6 +51,9 @@ export default defineConfig({
           { text: "Backups and restore", link: "/features/backups" },
           { text: "Proxy and TLS", link: "/features/proxy" },
           { text: "Brownfield import", link: "/features/import" },
+          { text: "Update checks", link: "/features/updates" },
+          { text: "Health and uptime", link: "/features/health" },
+          { text: "Account security", link: "/features/account-security" },
         ],
       },
       {

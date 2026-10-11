@@ -40,9 +40,9 @@ Open a stack from the list to get its page. The header shows the stack name, a s
 
 ### Overview
 
-The **Services** table lists each service with its status, image, tag and published ports. Each row has buttons to view that service's logs and to expand its health history. When a newer image version is known, the row shows an update badge and an upgrade button; see Update checks.
+The **Services** table lists each service with its status, image, tag and published ports. Each row has buttons to view that service's logs and to expand its health history. When a newer image version is known, the row shows an update badge and an upgrade button; see [Update checks](/features/updates).
 
-The **Activity** timeline merges deployments, status changes and events (such as a configuration change or an available update) into one list. Use the filter to show **All activity**, **Deployments**, **Status changes** or **Events**.
+The **Activity** timeline merges deployments, status changes and events (such as a configuration change or a configuration error) into one list. Use the filter to show **All activity**, **Deployments**, **Status changes** or **Events**.
 
 ### Logs
 
@@ -85,7 +85,7 @@ The **Deploy** button in the header runs `docker compose up -d` for the stack. W
 |---|---|---|
 | **Stop** | `docker compose stop` | Running, Healthy, Unhealthy or Error |
 | **Restart** | `docker compose restart` | Running, Healthy or Unhealthy |
-| **Update Images** | Pulls newer images and recreates the containers. See Update checks. | Not busy |
+| **Update Images** | Pulls newer images and recreates the containers. See [Update checks](/features/updates). | Not busy |
 | **Backup Now** | Starts a backup. See [Backups and restore](/features/backups). | Not already backing up |
 | **Delete** | Removes the stack. | Draft, Stopped or Error |
 

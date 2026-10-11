@@ -10,7 +10,7 @@ This page takes you from an empty Linux host to the Docktor setup wizard. Dockto
 - Access to `/var/run/docker.sock` on that host. Docktor manages containers by driving the host's own Docker daemon from inside its container.
 
 ::: warning The Docker socket is host-root access
-Mounting the Docker socket gives the Docktor container the reach of root on the host: anyone who can control Docktor, or open a shell in its container, can control every container on the host, including ones Docktor does not manage. The compose file also mounts the host's root filesystem read-only at `/host` so Docktor can scan for existing compose projects and measure disk usage. Understand both before you deploy Docktor on a host you do not fully trust, and restrict who can reach port 3000.
+Mounting the Docker socket gives the Docktor container the reach of root on the host: anyone who can control Docktor, or open a shell in its container, can control every container on the host, including ones Docktor does not manage. The compose file also mounts the host's root filesystem read-only at `/host` so Docktor can scan for existing compose projects and measure disk usage. Understand both before you deploy Docktor on a host you do not fully trust, and restrict who can reach port 3000. The [Security](/security) page explains both and how to harden a deployment.
 :::
 
 ## 1. Create the directories
@@ -81,3 +81,9 @@ docker compose up -d
 ```
 
 Database migrations are applied automatically when the new container starts. The compose file follows `latest`, which moves only when a release is published. For production, edit the `image:` line in `docker-compose.yml` to a version tag such as `ghcr.io/docktor-app/docktor:0.1.0`, so an upgrade happens when you choose it. The [Image tags](/reference/deployment#image-tags) section of the Deployment reference lists the available tags.
+
+## Next steps
+
+- [Introduction](/guide/introduction) explains what Docktor is, who it is for and how it works.
+- [Stacks](/features/stacks) shows how to create, edit and deploy your first stack.
+- [Security](/security) explains what the Docker socket means for your host and how to run Docktor safely. Read it before you expose Docktor beyond your own network.

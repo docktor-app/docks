@@ -28,7 +28,9 @@ export default defineConfig({
 
   themeConfig: {
     nav: [
-      { text: "Guide", link: "/guide/get-started" },
+      { text: "Guide", link: "/guide/introduction" },
+      { text: "Features", link: "/features/stacks" },
+      { text: "Security", link: "/security" },
       { text: "Reference", link: "/reference/deployment" },
       { text: "GitHub", link: PROJECT_REPO },
     ],
@@ -36,7 +38,14 @@ export default defineConfig({
     sidebar: [
       {
         text: "Guide",
-        items: [{ text: "Get started", link: "/guide/get-started" }],
+        items: [
+          { text: "Introduction", link: "/guide/introduction" },
+          { text: "Get started", link: "/guide/get-started" },
+        ],
+      },
+      {
+        text: "Features",
+        items: [{ text: "Stacks", link: "/features/stacks" }],
       },
       {
         text: "Reference",
@@ -45,6 +54,7 @@ export default defineConfig({
           { text: "Templates", link: "/reference/templates" },
         ],
       },
+      { text: "Security", link: "/security" },
     ],
 
     socialLinks: [{ icon: "github", link: PROJECT_REPO }],

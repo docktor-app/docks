@@ -63,7 +63,7 @@ This pulls `ghcr.io/docktor-app/docktor:latest` and `postgres:18` and starts bot
 docker compose logs -f docktor
 ```
 
-If the `docktor` container exits right away, run `docker compose logs docktor`. Docktor checks its environment before it does anything else, and when a required variable is missing or malformed it prints one report naming every variable to fix, then stops. Fix the listed values in `.env` and run `docker compose up -d` again. The Startup checks section of the Deployment reference lists the checks and what each one means.
+If the `docktor` container exits right away, run `docker compose logs docktor`. Docktor checks its environment before it does anything else, and when a required variable is missing or malformed it prints one report naming every variable to fix, then stops. Fix the listed values in `.env` and run `docker compose up -d` again. The [Startup checks](/reference/deployment#startup-checks) section of the Deployment reference lists the checks and what each one means.
 
 ## 5. Open the setup wizard
 
@@ -80,4 +80,4 @@ docker compose pull
 docker compose up -d
 ```
 
-Database migrations are applied automatically when the new container starts. The compose file follows `latest`, which moves only when a release is published. For production, edit the `image:` line in `docker-compose.yml` to a version tag such as `ghcr.io/docktor-app/docktor:0.1.0`, so an upgrade happens when you choose it. The Image tags section of the Deployment reference lists the available tags.
+Database migrations are applied automatically when the new container starts. The compose file follows `latest`, which moves only when a release is published. For production, edit the `image:` line in `docker-compose.yml` to a version tag such as `ghcr.io/docktor-app/docktor:0.1.0`, so an upgrade happens when you choose it. The [Image tags](/reference/deployment#image-tags) section of the Deployment reference lists the available tags.

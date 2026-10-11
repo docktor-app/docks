@@ -29,6 +29,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: "Guide", link: "/guide/get-started" },
+      { text: "Reference", link: "/reference/deployment" },
       { text: "GitHub", link: PROJECT_REPO },
     ],
 
@@ -36,6 +37,13 @@ export default defineConfig({
       {
         text: "Guide",
         items: [{ text: "Get started", link: "/guide/get-started" }],
+      },
+      {
+        text: "Reference",
+        items: [
+          { text: "Deployment and environment", link: "/reference/deployment" },
+          { text: "Templates", link: "/reference/templates" },
+        ],
       },
     ],
 

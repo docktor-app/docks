@@ -9,7 +9,7 @@ A backup captures the whole stack folder: `docker-compose.yml`, `.env` and every
 Every backup is written to a restic repository inside the stack's own folder, in `backups/`, encrypted with the restic password you set. Each stack has its own repository, so the stack and its snapshots travel together.
 
 ::: warning Backups live on the same disk as the data
-In v0.1.0 every backup is stored in the stack's own `backups/` folder, whatever repository type you pick in Settings. The **SFTP** and **S3-compatible** options can be filled in and saved, but they are **not used as a backup destination in v0.1.0**. They do not give you an off-site copy. If you need one, copy each stack's `backups/` folder to another machine yourself, for example with `rsync`. Deleting a stack removes its folder, and its backups with it.
+In v0.1.0 every backup is stored in the stack's own `backups/` folder. **Local** is the only repository type you can choose; SFTP and S3-compatible storage are planned but not available yet, so there is no built-in off-site copy. If you need one, copy each stack's `backups/` folder to another machine yourself, for example with `rsync`. Deleting a stack removes its folder, and its backups with it.
 :::
 
 Backups run while the stack keeps running; Docktor does not stop it. Files that change mid-backup are captured as they are, so for databases use a pre-backup hook that creates a consistent dump (see [Hooks](#hooks)).
@@ -19,7 +19,7 @@ Data outside the stack folder is not backed up. Bind mounts that point elsewhere
 ## Setting up
 
 1. Go to **Settings**, **Backup**, and find **Backup Repository**.
-2. Choose a **Repository type**. Choose **Local**: the card then explains that backups are stored in a `backups/` subdirectory within each stack's directory, so no repository path is needed. (See the warning above about **SFTP** and **S3-compatible**.)
+2. Choose a **Repository type**. Choose **Local**: the card then explains that backups are stored in a `backups/` subdirectory within each stack's directory, so no repository path is needed. It is the only choice in v0.1.0; the dropdown stays because more targets are planned.
 3. Enter a **Restic password** and choose **Save repository settings**. The password is stored encrypted. The card shows "(password saved)" afterwards.
 
 No backup can run until a repository is configured; trying gives "No backup repository is configured". If the card shows "restic is not installed on this host", the image you run does not include restic; use the published image.

@@ -205,7 +205,7 @@ A fresh, empty database records no baseline; the initial migration is simply app
 
 Backup settings (the restic password, the repository type, schedules and retention) are configured in the app itself, under Settings, Backup, and stored encrypted in the database. They are not environment variables and need no volume.
 
-In v0.1.0 every backup is written to a restic repository in the `backups/` folder inside the stack's own folder, below the stacks directory. That directory is already bind-mounted from the host, so there is no backup volume in `docker-compose.yml` and none to add. The SFTP and S3-compatible repository types can be saved in Settings but are not used as a backup destination yet, so copy the `backups/` folders off the host yourself if you need an off-site copy. See [Backups and restore](/features/backups) for the full behaviour.
+In v0.1.0 every backup is written to a restic repository in the `backups/` folder inside the stack's own folder, below the stacks directory. That directory is already bind-mounted from the host, so there is no backup volume in `docker-compose.yml` and none to add. Local is the only repository type in v0.1.0 (SFTP and S3-compatible storage are planned), so copy the `backups/` folders off the host yourself if you need an off-site copy. See [Backups and restore](/features/backups) for the full behaviour.
 
 ## Troubleshooting
 

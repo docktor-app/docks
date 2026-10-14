@@ -1,0 +1,167 @@
+/* Docktor brand (docktor/docs/branding): Ink #0F1A1F, Mint #2FD1A0, Mist #E8EEF0.
+   Mint is a fill colour; on light backgrounds text uses a darker mint so it
+   stays readable. */
+:root {
+  --vp-c-brand-1: #0b7f5e;
+  --vp-c-brand-2: #0e9a72;
+  --vp-c-brand-3: #2fd1a0;
+  --vp-c-brand-soft: rgba(47, 209, 160, 0.16);
+  --vp-c-text-1: #0f1a1f;
+  --vp-button-brand-bg: #2fd1a0;
+  --vp-button-brand-text: #0f1a1f;
+  --vp-button-brand-hover-bg: #26b88b;
+  --vp-button-brand-hover-text: #0f1a1f;
+  --vp-button-brand-active-bg: #1f9c76;
+  --vp-button-brand-active-text: #0f1a1f;
+}
+
+.dark {
+  --vp-c-bg: #0f1a1f;
+  --vp-c-bg-alt: #0b1417;
+  --vp-c-bg-elv: #142229;
+  --vp-c-bg-soft: #142229;
+  --vp-c-text-1: #e8eef0;
+  --vp-c-brand-1: #2fd1a0;
+  --vp-c-brand-2: #26b88b;
+  --vp-c-brand-3: #1f9c76;
+  --vp-c-brand-soft: rgba(47, 209, 160, 0.16);
+}
+
+/* The landing page owns the whole home layout. */
+.VPHome {
+  padding-bottom: 0 !important;
+}
+
+/* Landing page tokens and shared pieces. */
+.dl {
+  --ink: #0f1a1f;
+  --muted: #4f5f66;
+  --line: #dce4e7;
+  --paper: #ffffff;
+  --surface: #f7f9fa;
+  --tint: #e8eef0;
+  --mint: #2fd1a0;
+  --brand-deep: #0b7f5e;
+  --on-mint: #0f1a1f;
+  --sign: #0f1a1f;
+  --sign-hover: #16262d;
+  --ok: #0b7f5e;
+  --warn: #b7791f;
+  --bad: #d93f45;
+  --f-display: "Outfit", var(--vp-font-family-base);
+  --f-mono: "IBM Plex Mono", var(--vp-font-family-mono);
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.dark .dl {
+  --ink: #e8eef0;
+  --muted: #93a5ac;
+  --line: #22323a;
+  --paper: #142229;
+  --surface: #0f1a1f;
+  --tint: #132127;
+  --brand-deep: #2fd1a0;
+  --sign: #142229;
+  --sign-hover: #1a2c34;
+  --ok: #2fd1a0;
+  --warn: #f0b34a;
+  --bad: #ff6b70;
+}
+
+.dl h1,
+.dl h2,
+.dl h3 {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-family: var(--f-display);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.dl-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.dl-section {
+  padding: 96px 0;
+}
+
+.dl-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-deep);
+}
+
+/* A miniature of the mark's pulse instead of a plain rule. */
+.dl-eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 12px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 12'%3E%3Cpolyline points='1,6 7,6 10,1 15,11 18,6 25,6' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 12'%3E%3Cpolyline points='1,6 7,6 10,1 15,11 18,6 25,6' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.dl-section h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 700;
+  max-width: 720px;
+}
+
+.dl-sub {
+  margin: 16px 0 0;
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.dl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none !important;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.dl-btn-primary {
+  background: var(--mint);
+  color: var(--on-mint) !important;
+}
+
+.dl-btn-primary:hover {
+  background: #26b88b;
+  transform: translateY(-1px);
+}
+
+.dl-btn-ghost {
+  border: 1.5px solid var(--line);
+  color: var(--ink) !important;
+  background: var(--paper);
+}
+
+.dl-btn-ghost:hover {
+  border-color: var(--mint);
+}
+
+@media (max-width: 560px) {
+  .dl-section {
+    padding: 64px 0;
+  }
+}

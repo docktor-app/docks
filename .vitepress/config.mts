@@ -26,7 +26,26 @@ export default defineConfig({
   srcExclude: ["README.md"],
   sitemap: DOCS_SITE_URL ? { hostname: DOCS_SITE_URL } : undefined,
 
+  // Brand assets are copies of docktor/docs/branding and client/public.
+  head: [
+    ["link", { rel: "icon", href: `${siteBase}favicon.ico`, sizes: "48x48" }],
+    ["link", { rel: "icon", href: `${siteBase}favicon.svg`, type: "image/svg+xml" }],
+    ["link", { rel: "apple-touch-icon", href: `${siteBase}apple-touch-icon.png` }],
+    ["meta", { name: "theme-color", content: "#0F1A1F" }],
+    ["meta", { property: "og:site_name", content: PROJECT_NAME }],
+    // Social cards need an absolute image URL, so this waits for a public URL.
+    ...(DOCS_SITE_URL
+      ? ([
+          ["meta", { property: "og:image", content: `${DOCS_SITE_URL}/social-preview.png` }],
+          ["meta", { name: "twitter:card", content: "summary_large_image" }],
+        ] as [string, Record<string, string>][])
+      : []),
+  ],
+
   themeConfig: {
+    logo: { light: "/brand/docktor-logo.svg", dark: "/brand/docktor-logo-light.svg", alt: PROJECT_NAME },
+    siteTitle: false,
+
     nav: [
       { text: "Guide", link: "/guide/introduction" },
       { text: "Features", link: "/features/stacks" },
